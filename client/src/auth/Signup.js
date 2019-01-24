@@ -23,6 +23,9 @@ class Signup extends Component {
       .then(res => {
         console.log(res);
       })
+      .then(() => {
+        this.props.history.push("/");
+      })
       .catch(err => {
         console.log({ Error: err });
       });
@@ -58,7 +61,9 @@ class Signup extends Component {
             onChange={this.handleInputChange}
           />
         </div>
-        <button type="submit" className="formBTN">Sign Up</button>
+        <button type="submit" className="formBTN">
+          Sign Up
+        </button>
       </form>
     );
   }

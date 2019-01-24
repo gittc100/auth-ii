@@ -9,6 +9,7 @@ const Home = () => {
   return (
     <div>
       <h1>Home Component</h1>
+      <h2>Login or Sign Up</h2>
     </div>
   );
 };
@@ -25,7 +26,7 @@ class App extends Component {
             <NavLink to="/users">Users</NavLink>
             <NavLink to="/signup">Sign Up</NavLink>
             <NavLink to="/signin">Login In</NavLink>
-            <button onClick={this.signout}>Sign Out</button>
+            <NavLink to="/" exact onClick={this.signout}>Sign Out</NavLink>
           </nav>
         </header>
         <main>
@@ -40,7 +41,6 @@ class App extends Component {
 
   signout = () => {
     localStorage.removeItem("jwt");
-    
   };
 }
 

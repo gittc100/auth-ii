@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import '../App.css'
+import "../App.css";
 
 class Login extends Component {
   state = {
@@ -20,8 +20,11 @@ class Login extends Component {
     const endpoint = "http://localhost:4400/api/login";
     axios
       .post(endpoint, this.state)
-      .then(res=>{
-          localStorage.setItem('jwt', res.data.token);
+      .then(res => {
+        localStorage.setItem("jwt", res.data.token);
+      })
+      .then(() => {
+        this.props.history.push("/users");
       })
       .catch(err => {
         console.log({ Error: err });
@@ -49,7 +52,9 @@ class Login extends Component {
             onChange={this.handleInputChange}
           />
         </div>
-        <button type="submit" className="formBTN">Login</button>
+        <button type="submit" className="formBTN">
+          Login
+        </button>
       </form>
     );
   }
