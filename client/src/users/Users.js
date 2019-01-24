@@ -29,13 +29,18 @@ class Users extends Component {
 
   render() {
     return (
-      <div>
+      <div className="userMainContainer">
         <h2>List of Users</h2>
-        <ul>
+        <div className="userContainer">
           {this.state.users.map(item => {
-            return <li key={item.id}>{item.username}</li>;
+            return (
+              <div key={item.id} className="user">
+                <h3>User Name: {item.username}</h3>
+                <p>Department: {item.department}</p>
+              </div>
+            );
           })}
-        </ul>
+        </div>
       </div>
     );
   }

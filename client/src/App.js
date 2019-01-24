@@ -5,7 +5,7 @@ import Login from "./auth/Login.js";
 import Signup from "./auth/Signup";
 import "./App.css";
 
-const Home = props => {
+const Home = () => {
   return (
     <div>
       <h1>Home Component</h1>
@@ -18,7 +18,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <nav>
+          <nav className="navBar">
             <NavLink to="/" exact>
               Home
             </NavLink>
@@ -40,6 +40,7 @@ class App extends Component {
 
   signout = () => {
     localStorage.removeItem("jwt");
+    
   };
 }
 
