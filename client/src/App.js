@@ -27,13 +27,13 @@ class App extends Component {
             <NavLink to="/signin">Login In</NavLink>
             <button onClick={this.signout}>Sign Out</button>
           </nav>
-          <main>
-            <Route path="/" component={Home} exact />
-            <Route path="/users" component={Users} ></Route>
-            <Route path="/signin" component={Login} />
-            <Route path="/signup" component={Signup} />
-          </main>
         </header>
+        <main>
+          <Route path="/" component={Home} exact />
+          <Route path="/users" component={Users} />
+          <Route path="/signin" component={Login} />
+          <Route path="/signup" component={Signup} />
+        </main>
       </div>
     );
   }
